@@ -16,12 +16,10 @@ void * file_output () ;
 /* Create a function to store the data */
 
 int main () {
-   natural_log ();
-   approximation ();
-//   difference (natural_log(), approximation()); Check for natural log function and approximation function
-   percentage (natural_log(), approximation());
-   file_output (natural_log(), approximation(), percentage());
-   
+   double * log = natural_log();
+   double * approx = approximation();
+   double * percent = percentage(log, approx);
+   file_output (log, approx, percent);
    return 0;
 }
 
@@ -104,6 +102,7 @@ void * file_output (double * natural_array, double * approximation_array, double
   for (i = 0; i <= ELEMENTS; i++) {
        fprintf (out_file2, "%f\n", percentage_array[i]);
   }
+  return out_file, out_file1, out_file2;
  
 }
 
